@@ -2,23 +2,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("If you want to see Synchronized method - please enter Y, else - N");
-        Scanner scanner = new Scanner(System.in); //читіваем данные с клавиатуры
-        String str = scanner.nextLine().toLowerCase(); //создаем ссыл.переменную, в кот.-ю кладем считанную
-        //строку с клавиатуры и приводим ее к нижнему регистру
-        if (str.equals("y")) { //если считанная строка с клавиатуры будет равна у (т.е. мы хотим увидеть работу
-            // Синхронизированного метода, то
-            for (int i = 0; i < 7; i++) { //7 раз
-                MyThreadSynchronized myThreadSynchronized = new MyThreadSynchronized(); //создаем новый обьект
-                //класса МойПотокСинхронизирован
-                myThreadSynchronized.start(); //запустить поток
+        System.out.println("Якщо ви хочете побачити синхронізований метод - введіть Y, інакше - N");
+        Scanner scanner = new Scanner(System.in); //зчитуємо дані з клавіатури
+        String str = scanner.nextLine().toLowerCase(); //створюємо змінну-посилання, у яку кладемо зчитаний
+        //рядок із клавіатури та переводимо його в нижній регістр
+        if (str.equals("y")) { //якщо зчитаний рядок із клавіатури дорівнює "y" (тобто ми хочемо побачити роботу
+            //синхронізованого методу, то
+            for (int i = 0; i < 7; i++) { //7 разів
+                MyThreadSynchronized myThreadSynchronized = new MyThreadSynchronized(); //створюємо новий об'єкт
+                //класу MyThreadSynchronized
+                myThreadSynchronized.start(); //запустити потік
             }
-        } else if (str.equals("n")) { //если считанная строка с клавиатуры будет равна "n" (т.е. мы хотим увидеть работу
-            // НЕ Синхронизированного метода, то
-            for (int i = 0; i < 7; i++) { //7 раз
-                MyThreadNotSynchronized myThreadNotSynchronized = new MyThreadNotSynchronized(); //создаем новый обьект
-                //класса МойПотокНеСинхронизирован
-                myThreadNotSynchronized.start(); //запустить поток
+        } else if (str.equals("n")) { //якщо зчитаний рядок із клавіатури дорівнює "n" (тобто ми хочемо побачити роботу
+            //НЕ синхронізованого методу, то
+            for (int i = 0; i < 7; i++) { //7 разів
+                MyThreadNotSynchronized myThreadNotSynchronized = new MyThreadNotSynchronized(); //створюємо новий об'єкт
+                //класу MyThreadNotSynchronized
+                myThreadNotSynchronized.start(); //запустити потік
             }
         }
     }
